@@ -3,28 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yassine Ben Jemaa — AI & MLOps Engineer</title>
+  <title>Yassine Ben Jemaa — ML Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
   <style>
     :root {
-      --bg: #0a0a0a;
-      --bg2: #111111;
-      --bg3: #1a1a1a;
-      --border: rgba(255,255,255,0.08);
-      --border-hover: rgba(255,255,255,0.18);
-      --text: #f0f0f0;
-      --text2: #888;
-      --text3: #555;
-      --accent: #4fffb0;
-      --accent2: #00c9ff;
+      --bg: #050505;
+      --bg2: #0c0c0c;
+      --bg3: #141414;
+      --border: rgba(255,255,255,0.07);
+      --border-hover: rgba(255,255,255,0.16);
+      --text: #efefef;
+      --text2: #8a8a8a;
+      --text3: #4a4a4a;
+      --accent: #ffffff;
       --font: 'DM Sans', sans-serif;
       --mono: 'DM Mono', monospace;
     }
 
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -36,12 +34,11 @@
       overflow-x: hidden;
     }
 
-    /* Grain overlay */
     body::before {
       content: '';
       position: fixed; inset: 0;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none; z-index: 0; opacity: 0.4;
+      pointer-events: none; z-index: 0; opacity: 0.3;
     }
 
     /* NAV */
@@ -49,8 +46,8 @@
       position: fixed; top: 0; left: 0; right: 0;
       display: flex; justify-content: space-between; align-items: center;
       padding: 1.2rem 3rem;
-      background: rgba(10,10,10,0.85);
-      backdrop-filter: blur(12px);
+      background: rgba(5,5,5,0.88);
+      backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border);
       z-index: 100;
     }
@@ -82,8 +79,8 @@
       padding-top: 8rem;
     }
     .hero-tag {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-family: var(--mono); font-size: 12px; color: var(--accent);
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--mono); font-size: 12px; color: var(--text2);
       margin-bottom: 1.5rem; letter-spacing: 0.08em;
     }
     .hero-tag::before {
@@ -94,26 +91,26 @@
     }
     @keyframes pulse {
       0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.7); }
+      50% { opacity: 0.3; transform: scale(0.7); }
     }
     .hero h1 {
-      font-size: clamp(32px, 6vw, 52px);
-      font-weight: 300; line-height: 1.15;
-      color: var(--text); margin-bottom: 1rem;
-      letter-spacing: -0.02em;
+      font-size: clamp(36px, 7vw, 58px);
+      font-weight: 300; line-height: 1.1;
+      color: var(--text); margin-bottom: 1.2rem;
+      letter-spacing: -0.03em;
     }
-    .hero h1 span { color: var(--accent); font-weight: 500; }
+    .hero h1 span { font-weight: 600; }
     .hero-desc {
       font-size: 16px; color: var(--text2);
-      max-width: 520px; margin-bottom: 2.5rem; line-height: 1.8;
+      max-width: 500px; margin-bottom: 2.5rem; line-height: 1.8;
     }
     .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
     .btn-primary {
       font-family: var(--font); font-size: 13px; font-weight: 500;
       padding: 10px 24px; border-radius: 6px;
-      background: var(--accent); color: #0a0a0a;
+      background: var(--accent); color: var(--bg);
       border: none; cursor: pointer; transition: opacity 0.2s, transform 0.15s;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.02em; text-decoration: none;
     }
     .btn-primary:hover { opacity: 0.85; transform: translateY(-1px); }
     .btn-outline {
@@ -122,39 +119,36 @@
       background: transparent; color: var(--text);
       border: 1px solid var(--border-hover); cursor: pointer;
       transition: border-color 0.2s, background 0.2s, transform 0.15s;
+      text-decoration: none;
     }
     .btn-outline:hover { border-color: var(--text3); background: var(--bg3); transform: translateY(-1px); }
 
     /* SECTION HEADER */
     .section-header {
-      display: flex; align-items: center; gap: 12px; margin-bottom: 2rem;
+      display: flex; align-items: center; gap: 12px; margin-bottom: 2.5rem;
     }
     .section-label {
       font-family: var(--mono); font-size: 11px;
-      color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--text2); letter-spacing: 0.1em; text-transform: uppercase;
+      white-space: nowrap;
     }
-    .section-line {
-      flex: 1; height: 1px; background: var(--border);
-    }
-    .section-title {
-      font-size: 22px; font-weight: 400; color: var(--text);
-      letter-spacing: -0.01em; margin-bottom: 1.5rem;
-    }
+    .section-line { flex: 1; height: 1px; background: var(--border); }
 
-    /* ABOUT CARDS */
+    /* ABOUT */
     .about-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 10px; margin-bottom: 1.5rem;
     }
     .about-card {
       background: var(--bg2); border: 1px solid var(--border);
-      border-radius: 10px; padding: 1rem 1.1rem;
+      border-radius: 10px; padding: 1.1rem 1.2rem;
       transition: border-color 0.2s;
     }
     .about-card:hover { border-color: var(--border-hover); }
     .about-card .label {
-      font-family: var(--mono); font-size: 11px;
-      color: var(--text3); letter-spacing: 0.06em; margin-bottom: 6px;
+      font-family: var(--mono); font-size: 10px;
+      color: var(--text3); letter-spacing: 0.08em; margin-bottom: 6px;
+      text-transform: uppercase;
     }
     .about-card .value { font-size: 13px; color: var(--text); line-height: 1.5; }
 
@@ -163,17 +157,15 @@
     .tl-item {
       display: flex; gap: 14px; align-items: flex-start;
       background: var(--bg2); border: 1px solid var(--border);
-      border-radius: 10px; padding: 1rem 1.2rem;
+      border-radius: 10px; padding: 1.1rem 1.2rem;
       transition: border-color 0.2s, background 0.2s;
     }
     .tl-item:hover { border-color: var(--border-hover); background: var(--bg3); }
     .tl-icon {
       width: 34px; height: 34px; border-radius: 8px; flex-shrink: 0;
       display: flex; align-items: center; justify-content: center; font-size: 16px;
+      background: rgba(255,255,255,0.05); color: var(--text2);
     }
-    .tl-icon.ml { background: rgba(0,201,255,0.12); color: var(--accent2); }
-    .tl-icon.bi { background: rgba(79,255,176,0.1); color: var(--accent); }
-    .tl-icon.cert { background: rgba(255,200,70,0.1); color: #ffc846; }
     .tl-body { flex: 1; }
     .tl-title { font-size: 14px; font-weight: 500; color: var(--text); }
     .tl-sub { font-size: 13px; color: var(--text2); margin-top: 2px; }
@@ -183,35 +175,60 @@
     }
     .tl-badge {
       display: inline-block; font-size: 10px; padding: 2px 8px;
-      border-radius: 4px; background: rgba(79,255,176,0.12);
-      color: var(--accent); margin-left: 8px; font-family: var(--mono);
+      border-radius: 4px; background: rgba(255,255,255,0.08);
+      color: var(--text); margin-left: 8px; font-family: var(--mono);
       vertical-align: middle;
     }
 
+    /* PROJECTS */
+    .projects-grid { display: flex; flex-direction: column; gap: 10px; }
+    .project-card {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.3rem 1.4rem;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .project-card:hover { border-color: var(--border-hover); background: var(--bg3); }
+    .project-name {
+      font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 4px;
+    }
+    .project-desc { font-size: 13px; color: var(--text2); line-height: 1.6; margin-bottom: 10px; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .project-tag {
+      font-family: var(--mono); font-size: 10px;
+      padding: 3px 9px; border-radius: 4px;
+      background: rgba(255,255,255,0.05); color: var(--text3);
+      letter-spacing: 0.03em;
+    }
+
     /* SKILLS */
-    .skills-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+    .skills-category { margin-bottom: 1.2rem; }
+    .skills-category-label {
+      font-family: var(--mono); font-size: 10px;
+      color: var(--text3); letter-spacing: 0.08em;
+      text-transform: uppercase; margin-bottom: 8px;
+    }
+    .skills-row { display: flex; flex-wrap: wrap; gap: 6px; }
     .skill-pill {
       font-size: 12px; padding: 5px 13px; border-radius: 99px;
       border: 1px solid var(--border); color: var(--text2);
       background: var(--bg2); cursor: default;
-      transition: border-color 0.2s, color 0.2s, background 0.2s;
+      transition: border-color 0.2s, color 0.2s;
       font-family: var(--mono); letter-spacing: 0.02em;
     }
     .skill-pill:hover { border-color: var(--border-hover); color: var(--text); }
     .skill-pill.core {
-      background: rgba(79,255,176,0.08); color: var(--accent);
-      border-color: rgba(79,255,176,0.25);
+      background: rgba(255,255,255,0.06); color: var(--text);
+      border-color: rgba(255,255,255,0.18);
     }
-    .skill-pill.core:hover { background: rgba(79,255,176,0.15); }
 
     /* CONTACT */
     .contact-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 10px;
     }
     .contact-card {
       background: var(--bg2); border: 1px solid var(--border);
-      border-radius: 10px; padding: 1rem 1.1rem;
+      border-radius: 10px; padding: 1.1rem 1.2rem;
       display: flex; align-items: center; gap: 12px;
       text-decoration: none; transition: border-color 0.2s, background 0.2s, transform 0.15s;
     }
@@ -231,7 +248,6 @@
       position: relative; z-index: 1;
     }
 
-    /* SCROLLBAR */
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: var(--bg3); border-radius: 2px; }
@@ -240,6 +256,8 @@
       nav { padding: 1rem 1.5rem; }
       .nav-links { gap: 1.2rem; }
       section { padding: 5rem 1.5rem; }
+      .about-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -250,21 +268,23 @@
   <div class="nav-links">
     <a href="#about">About</a>
     <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
     <a href="#skills">Skills</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
 
 <!-- HERO -->
-<section id="hero">
+<section id="hero" class="hero">
+  <div class="hero-tag">ML ENGINEER · MLOPS</div>
   <h1>Yassine<br><span>Ben Jemaa</span></h1>
   <p class="hero-desc">
-    Software Engineering student passionate about AI, Data Science & MLOps —
-    building intelligent systems beyond the classroom.
+    Software Engineering student building production ML systems — not just notebooks.
+    Self-taught specialization in machine learning engineering and MLOps.
   </p>
   <div class="hero-btns">
-    <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get in touch</button>
-    <button class="btn-outline" onclick="document.getElementById('experience').scrollIntoView({behavior:'smooth'})">View experience</button>
+    <a class="btn-primary" href="#contact">Get in touch</a>
+    <a class="btn-outline" href="#projects">View projects</a>
   </div>
 </section>
 
@@ -276,25 +296,20 @@
   </div>
   <div class="about-grid">
     <div class="about-card">
-      <div class="label">UNIVERSITY</div>
+      <div class="label">University</div>
       <div class="value">Faculté des Sciences de Tunis — UTM</div>
     </div>
     <div class="about-card">
-      <div class="label">DEGREE</div>
-      <div class="value">Software Engineering, graduating 2027</div>
+      <div class="label">Degree</div>
+      <div class="value">Software Engineering · graduating 2027</div>
     </div>
     <div class="about-card">
-      <div class="label">FOCUS</div>
-      <div class="value">AI · MLOps · Data Science</div>
-    </div>
-
-    <div class="about-card">
-      <div class="label">SELF-TAUGHT IN</div>
-      <div class="value">Machine Learning, model deployment & cloud</div>
+      <div class="label">Specialization</div>
+      <div class="value">ML Engineering · MLOps · Applied AI</div>
     </div>
     <div class="about-card">
-      <div class="label">LOOKING FOR</div>
-      <div class="value">PFE internship in AI / MLOps / Data Science</div>
+      <div class="label">Looking for</div>
+      <div class="value">PFE internship in Europe — Jan 2027</div>
     </div>
   </div>
 </section>
@@ -302,31 +317,31 @@
 <!-- EXPERIENCE -->
 <section id="experience">
   <div class="section-header">
-    <span class="section-label">02 — Experience & certifications</span>
+    <span class="section-label">02 — Experience & Certifications</span>
     <div class="section-line"></div>
   </div>
   <div class="timeline">
 
     <div class="tl-item">
-      <div class="tl-icon ml"><i class="ti ti-brain"></i></div>
+      <div class="tl-icon"><i class="ti ti-brain"></i></div>
       <div class="tl-body">
-        <div class="tl-title">ML Engineer Intern — Amen Bank <span class="tl-badge">upcoming</span></div>
-        <div class="tl-sub">Machine learning model building · MLOps pipeline deployment</div>
-        <div class="tl-date">Jun 2026</div>
+        <div class="tl-title">ML Engineer Intern — Amen Bank <span class="tl-badge">current</span></div>
+        <div class="tl-sub">Production ML systems · model deployment · MLOps pipelines</div>
+        <div class="tl-date">2026</div>
       </div>
     </div>
 
     <div class="tl-item">
-      <div class="tl-icon bi"><i class="ti ti-chart-bar"></i></div>
+      <div class="tl-icon"><i class="ti ti-chart-bar"></i></div>
       <div class="tl-body">
         <div class="tl-title">BI Engineer Intern — Poulina Group Holding</div>
         <div class="tl-sub">Power BI dashboards · ETL pipelines · Power Apps · SSIS</div>
-        <div class="tl-date">Jul 2025 · 1 month · Hybrid</div>
+        <div class="tl-date">Jul 2025 · 1 month</div>
       </div>
     </div>
 
     <div class="tl-item">
-      <div class="tl-icon bi"><i class="ti ti-chart-bar"></i></div>
+      <div class="tl-icon"><i class="ti ti-chart-bar"></i></div>
       <div class="tl-body">
         <div class="tl-title">BI Engineer Intern — Poulina Group Holding</div>
         <div class="tl-sub">Power BI dashboards · Microsoft Power Apps</div>
@@ -335,16 +350,16 @@
     </div>
 
     <div class="tl-item">
-      <div class="tl-icon cert"><i class="ti ti-certificate"></i></div>
+      <div class="tl-icon"><i class="ti ti-certificate"></i></div>
       <div class="tl-body">
-        <div class="tl-title">IBM — Data Analysis with Python</div>
-        <div class="tl-sub">Credential ID: GFFLLABEHU16</div>
-        <div class="tl-date">Issued Mar 2026</div>
+        <div class="tl-title">NVIDIA DLI — Fundamentals of Deep Learning</div>
+        <div class="tl-sub">Deep neural networks · CNNs · data augmentation · transfer learning</div>
+        <div class="tl-date">Certified</div>
       </div>
     </div>
 
     <div class="tl-item">
-      <div class="tl-icon cert"><i class="ti ti-cloud"></i></div>
+      <div class="tl-icon"><i class="ti ti-cloud"></i></div>
       <div class="tl-body">
         <div class="tl-title">AWS — Cloud Quest: Cloud Practitioner</div>
         <div class="tl-sub">Amazon Web Services training badge</div>
@@ -355,37 +370,117 @@
   </div>
 </section>
 
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header">
+    <span class="section-label">03 — Projects</span>
+    <div class="section-line"></div>
+  </div>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-name">Real-Time Behavioral Anomaly Detection</div>
+      <div class="project-desc">Streaming anomaly detection platform using autoencoder + LSTM with SHAP-based explainability, orchestrated with Airflow and tracked via MLflow.</div>
+      <div class="project-tags">
+        <span class="project-tag">Kafka</span>
+        <span class="project-tag">MLflow</span>
+        <span class="project-tag">Airflow</span>
+        <span class="project-tag">SHAP</span>
+        <span class="project-tag">Evidently</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-name">GDPR RAG Knowledge Platform</div>
+      <div class="project-desc">Hybrid retrieval system combining BM25 + dense retrieval with reciprocal rank fusion and cross-encoder reranking for regulatory document Q&A.</div>
+      <div class="project-tags">
+        <span class="project-tag">LangChain</span>
+        <span class="project-tag">FastAPI</span>
+        <span class="project-tag">PostgreSQL</span>
+        <span class="project-tag">Cross-encoder</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-name">Monte Carlo Options Pricing</div>
+      <div class="project-desc">GBM, Merton jump-diffusion, and Heston model with QE discretization. Computes VaR/CVaR risk metrics with a FastAPI + React frontend.</div>
+      <div class="project-tags">
+        <span class="project-tag">FastAPI</span>
+        <span class="project-tag">React</span>
+        <span class="project-tag">NumPy</span>
+        <span class="project-tag">Stochastic Models</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-name">Intelligent Document Processing</div>
+      <div class="project-desc">Five-stage pipeline — document classification via EfficientNet/ViT, OCR and layout extraction via LayoutLMv3 + Table Transformer, NER, cross-document validation, and compliance scoring.</div>
+      <div class="project-tags">
+        <span class="project-tag">EfficientNet</span>
+        <span class="project-tag">LayoutLMv3</span>
+        <span class="project-tag">Kafka</span>
+        <span class="project-tag">MinIO</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- SKILLS -->
 <section id="skills">
   <div class="section-header">
-    <span class="section-label">03 — Skills & tools</span>
+    <span class="section-label">04 — Skills & Tools</span>
     <div class="section-line"></div>
   </div>
-  <div class="skills-grid">
-    <span class="skill-pill core">Python</span>
-    <span class="skill-pill core">Machine Learning</span>
-    <span class="skill-pill core">MLOps</span>
-    <span class="skill-pill core">Data Science</span>
-    <span class="skill-pill">TensorFlow</span>
-    <span class="skill-pill">scikit-learn</span>
-    <span class="skill-pill">BERT / NLP</span>
-    <span class="skill-pill">Pandas</span>
-    <span class="skill-pill">NumPy</span>
-    <span class="skill-pill">Power BI</span>
-    <span class="skill-pill">SQL</span>
-    <span class="skill-pill">ETL / SSIS</span>
-    <span class="skill-pill">Power Apps</span>
-    <span class="skill-pill">AWS</span>
-    <span class="skill-pill">Docker</span>
-    <span class="skill-pill">Git</span>
-    <span class="skill-pill">Jupyter</span>
+
+  <div class="skills-category">
+    <div class="skills-category-label">ML / Deep Learning</div>
+    <div class="skills-row">
+      <span class="skill-pill core">Python</span>
+      <span class="skill-pill core">PyTorch</span>
+      <span class="skill-pill core">TensorFlow</span>
+      <span class="skill-pill">scikit-learn</span>
+      <span class="skill-pill">HuggingFace</span>
+      <span class="skill-pill">Pandas</span>
+      <span class="skill-pill">NumPy</span>
+    </div>
+  </div>
+
+  <div class="skills-category">
+    <div class="skills-category-label">MLOps</div>
+    <div class="skills-row">
+      <span class="skill-pill core">MLflow</span>
+      <span class="skill-pill core">Airflow</span>
+      <span class="skill-pill">Docker</span>
+      <span class="skill-pill">Evidently</span>
+    </div>
+  </div>
+
+  <div class="skills-category">
+    <div class="skills-category-label">Data / Backend</div>
+    <div class="skills-row">
+      <span class="skill-pill core">PostgreSQL</span>
+      <span class="skill-pill core">Kafka</span>
+      <span class="skill-pill">FastAPI</span>
+      <span class="skill-pill">SQL</span>
+    </div>
+  </div>
+
+  <div class="skills-category">
+    <div class="skills-category-label">Tools & Cloud</div>
+    <div class="skills-row">
+      <span class="skill-pill">Git</span>
+      <span class="skill-pill">Linux</span>
+      <span class="skill-pill">AWS</span>
+      <span class="skill-pill">Power BI</span>
+    </div>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
   <div class="section-header">
-    <span class="section-label">04 — Contact & links</span>
+    <span class="section-label">05 — Contact</span>
     <div class="section-line"></div>
   </div>
   <div class="contact-grid">
@@ -400,21 +495,21 @@
       <i class="ti ti-brand-github"></i>
       <div>
         <div class="contact-label">GitHub</div>
-        <div class="contact-sub">View my projects</div>
+        <div class="contact-sub">yassine140903</div>
       </div>
     </a>
     <a class="contact-card" href="mailto:benjemaayassine00@gmail.com">
       <i class="ti ti-mail"></i>
       <div>
         <div class="contact-label">Email</div>
-        <div class="contact-sub">Get in touch</div>
+        <div class="contact-sub">benjemaayassine00@gmail.com</div>
       </div>
     </a>
   </div>
 </section>
 
 <footer>
-  © 2026 Yassine Ben Jemaa · built with purpose
+  © 2026 Yassine Ben Jemaa
 </footer>
 
 <script>
@@ -423,7 +518,6 @@
       if (e.isIntersecting) e.target.classList.add('visible');
     });
   }, { threshold: 0.08 });
-
   document.querySelectorAll('section').forEach(s => observer.observe(s));
   document.getElementById('hero').classList.add('visible');
 </script>
